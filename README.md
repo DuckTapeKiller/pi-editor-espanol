@@ -54,6 +54,7 @@ saber si el texto viene traducido, y el falso negativo es más caro que los toke
 pi-editor-espanol/
 ├── index.ts                 # la extensión
 ├── SKILL.md                 # copia literal de la skill
+├── LICENSE
 └── references/              # copias literales
     ├── norma-ortotipografia.md
     ├── norma-gramatica.md
@@ -71,3 +72,9 @@ repositorio: no hay contenido duplicado que pueda divergir.
 cp ~/.claude/skills/editor-en-espanol/SKILL.md ~/.pi/agent/extensions/pi-editor-espanol/SKILL.md
 cp ~/.claude/skills/editor-en-espanol/references/*.md ~/.pi/agent/extensions/pi-editor-espanol/references/
 ```
+
+## Licencia
+
+[MIT](LICENSE). `SKILL.md` y `references/` son copia literal de la skill
+[editor-en-espanol](https://github.com/CasaAmarillaRoja/editor-en-espanol),
+del mismo autor, y quedan cubiertos por esta misma licencia.
