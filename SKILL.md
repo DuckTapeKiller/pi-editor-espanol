@@ -1704,10 +1704,6 @@ palabra acusada, para que la cura no esté dentro de la enfermedad.
 | `references/cursiva-y-comillas.md` | 56 casos: qué va en cursiva, en «comillas», en redonda o sin resalte |
 | `references/marcas-de-traduccion.md` | Marcas ortotipográficas y sintácticas de que el texto viene del inglés |
 
-El corpus completo del que sale todo esto, para consultas que las referencias no cubran,
-está en `~/claude-workspace/1 - ESPAÑOL` (136 ficheros; el de puntuación tiene 91
-apartados y es el mejor).
-
 ## Cuando choca la norma con un manual de estilo
 
 Dentro de Wikipedia en español manda su **Manual de estilo**; fuera, la RAE. Se

@@ -1,0 +1,51 @@
+{
+  "name": "pi-editor-espanol",
+  "version": "1.0.0",
+  "description": "Pi package for proofreading Spanish text against the RAE-ASALE standard.",
+  "license": "MIT",
+  "author": "DuckTapeKiller",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DuckTapeKiller/pi-editor-espanol.git"
+  },
+  "type": "module",
+  "files": [
+    "index.ts",
+    "SKILL.md",
+    "references/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "pi-package",
+    "pi",
+    "pi-extension",
+    "spanish",
+    "rae",
+    "proofreading"
+  ],
+  "pi": {
+    "extensions": [
+      "index.ts"
+    ],
+    "skills": [
+      "SKILL.md"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-ai": "*",
+    "@earendil-works/pi-coding-agent": "*",
+    "typebox": "*"
+  },
+  "peerDependenciesMeta": {
+    "@earendil-works/pi-ai": {
+      "optional": true
+    },
+    "@earendil-works/pi-coding-agent": {
+      "optional": true
+    },
+    "typebox": {
+      "optional": true
+    }
+  }
+}
