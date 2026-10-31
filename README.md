@@ -4,22 +4,19 @@ Port a extensión de pi de la skill
 [editor-en-espanol](https://github.com/CasaAmarillaRoja/editor-en-espanol).
 Corrige textos en español contra la norma de la RAE-ASALE.
 
-La skill original conserva su nombre; el prefijo `pi-` distingue este port de la
-versión para Claude, que sigue viviendo en `~/.claude/skills/editor-en-espanol/`.
+La skill original conserva su nombre; el prefijo `pi-` distingue este paquete de la
+skill de origen.
 
 ## Por qué extensión, si pi ya carga skills
 
-pi implementa el estándar Agent Skills, así que la skill funciona tal cual si apuntas
-`skills` a su carpeta:
+Pi carga la extensión y la skill desde el manifiesto `package.json` de este paquete.
+La skill también puede cargarse directamente como recurso local apuntando a la carpeta
+que contiene `SKILL.md`.
 
-```json
-{ "skills": ["~/.claude/skills"] }
-```
-
-Esa vía es válida y no cuesta nada. Lo que no da es determinismo: una skill depende de
-que el modelo **decida** leer `SKILL.md`, y la documentación de pi lo dice sin rodeos
-(«models don't always do this»). Es exactamente la apuesta del README de la skill —
-*«lo que el modelo tiene que decidir abrir no se abre»*.
+La carga como skill local es válida y no cuesta nada. Lo que no da es determinismo: una
+skill depende de que el modelo **decida** leer `SKILL.md`, y la documentación de Pi lo
+dice sin rodeos («models don't always do this»). Es exactamente la apuesta del README
+de la skill — *«lo que el modelo tiene que decidir abrir no se abre»*.
 
 La extensión quita la decisión de en medio: inyecta la norma entera en el contexto
 antes de que el modelo escriba nada.
@@ -66,12 +63,15 @@ Los ficheros se leen **en tiempo de ejecución**, no están transcritos dentro d
 TypeScript. Para actualizar la norma basta con sobrescribir los `.md` desde el
 repositorio: no hay contenido duplicado que pueda divergir.
 
-## Mantener sincronizada la copia
+## Instalar y actualizar
 
 ```bash
-cp ~/.claude/skills/editor-en-espanol/SKILL.md ~/.pi/agent/extensions/pi-editor-espanol/SKILL.md
-cp ~/.claude/skills/editor-en-espanol/references/*.md ~/.pi/agent/extensions/pi-editor-espanol/references/
+pi install https://github.com/DuckTapeKiller/pi-editor-espanol
+pi update --extensions
 ```
+
+El manifiesto declara `index.ts` como extensión y `SKILL.md` como skill. Las referencias
+viajan dentro del repositorio y no dependen de otra carpeta local.
 
 ## Licencia
 
